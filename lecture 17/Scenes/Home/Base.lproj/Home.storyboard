@@ -70,7 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="titleLabel" destination="VPA-0E-1EW" id="NEC-2u-KuV"/>
+                        <outlet property="titleLabel" destination="VPA-0E-1EW" id="SH9-E1-Xpv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXE-k9-hyr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

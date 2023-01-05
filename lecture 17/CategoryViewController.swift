@@ -7,23 +7,51 @@
 
 import UIKit
 
-class CategoryViewController: UIPageViewController {
-
+class CategoryViewController: UIPageViewController  {
+    
+    
+    
+    
+    
+    var individualPageViewControllerList = [UIViewController]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.dataSource = self
+        self.delegate = self
+        individualPageViewControllerList=[
+            CategoryDetailsViewController.getInstance(index: 0),       CategoryDetailsViewController.getInstance(index: 1),
+            CategoryDetailsViewController.getInstance(index: 2),
+            CategoryDetailsViewController.getInstance(index: 3),
+            CategoryDetailsViewController.getInstance(index: 4),
+        ]
+        setViewControllers([individualPageViewControllerList[0]], direction:.forward, animated: true, completion: nil)
+    }
+}
+extension CategoryViewController : UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let indexOfCurrentPageViewController = individualPageViewControllerList.firstIndex(of:  viewController)!
+        
+        if indexOfCurrentPageViewController == 0 {
+            return nil
+        }else{
+            return individualPageViewControllerList[indexOfCurrentPageViewController - 1]
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let currentindexOdPageViewController = individualPageViewControllerList.firstIndex(of:  viewController)!
+        
+        if currentindexOdPageViewController == individualPageViewControllerList.count - 1 {
+            return nil
+        }else{
+            return individualPageViewControllerList[currentindexOdPageViewController + 1]
+        }
+      
     }
-    */
+    
+    
+    }
 
+extension CategoryViewController : UIPageViewControllerDelegate{
+    
 }
