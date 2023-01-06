@@ -53,37 +53,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPA-0E-1EW">
-                                <rect key="frame" x="175" y="416" width="43" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPA-0E-1EW">
+                                <rect key="frame" x="10" y="89" width="373" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzj-Sz-QFg">
+                                <rect key="frame" x="10" y="324.66666666666669" width="373" height="21.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMe-GH-kpR">
+                                <rect key="frame" x="122" y="713.33333333333337" width="149" height="54.666666666666629"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="9oT-6y-SGN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Fun Fact">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="34"/>
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTabfetch:" destination="Qs5-l2-VZk" eventType="touchUpInside" id="ZWZ-tj-aOG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y5h-20-bSX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
-                            <constraint firstItem="VPA-0E-1EW" firstAttribute="leading" secondItem="y5h-20-bSX" secondAttribute="leading" constant="175" id="48c-tZ-KiX"/>
-                            <constraint firstItem="VPA-0E-1EW" firstAttribute="top" secondItem="y5h-20-bSX" secondAttribute="top" constant="357" id="aGF-kq-4iR"/>
-                            <constraint firstItem="VPA-0E-1EW" firstAttribute="centerY" secondItem="PCI-D3-kAm" secondAttribute="centerY" id="jEx-5C-T8i"/>
-                            <constraint firstItem="VPA-0E-1EW" firstAttribute="centerX" secondItem="PCI-D3-kAm" secondAttribute="centerX" id="y76-aX-QD5"/>
+                            <constraint firstItem="VPA-0E-1EW" firstAttribute="leading" secondItem="y5h-20-bSX" secondAttribute="leading" constant="10" id="3kz-uO-CBZ"/>
+                            <constraint firstItem="LMe-GH-kpR" firstAttribute="centerX" secondItem="PCI-D3-kAm" secondAttribute="centerX" id="6u8-Km-FSF"/>
+                            <constraint firstItem="y5h-20-bSX" firstAttribute="trailing" secondItem="VPA-0E-1EW" secondAttribute="trailing" constant="10" id="8RC-WX-iVB"/>
+                            <constraint firstItem="nzj-Sz-QFg" firstAttribute="top" secondItem="VPA-0E-1EW" secondAttribute="bottom" constant="210.33333333333331" id="B2U-S0-ewR"/>
+                            <constraint firstItem="nzj-Sz-QFg" firstAttribute="leading" secondItem="VPA-0E-1EW" secondAttribute="leading" id="COh-dh-jDL"/>
+                            <constraint firstItem="nzj-Sz-QFg" firstAttribute="trailing" secondItem="VPA-0E-1EW" secondAttribute="trailing" id="JjJ-Lq-unF"/>
+                            <constraint firstItem="VPA-0E-1EW" firstAttribute="top" secondItem="y5h-20-bSX" secondAttribute="top" constant="30" id="jq5-zu-oHA"/>
+                            <constraint firstItem="y5h-20-bSX" firstAttribute="bottom" secondItem="LMe-GH-kpR" secondAttribute="bottom" constant="50" id="uj7-7g-Gk7"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="textLabel" destination="nzj-Sz-QFg" id="fjH-k7-xTT"/>
                         <outlet property="titleLabel" destination="VPA-0E-1EW" id="SH9-E1-Xpv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXE-k9-hyr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1570" y="-43"/>
+            <point key="canvasLocation" x="1568.7022900763359" y="-43.661971830985919"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

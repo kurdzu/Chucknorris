@@ -19,10 +19,12 @@ class CategoryViewController: UIPageViewController  {
         self.dataSource = self
         self.delegate = self
         individualPageViewControllerList=[
-            CategoryDetailsViewController.getInstance(index: 0),       CategoryDetailsViewController.getInstance(index: 1),
-            CategoryDetailsViewController.getInstance(index: 2),
-            CategoryDetailsViewController.getInstance(index: 3),
-            CategoryDetailsViewController.getInstance(index: 4),
+            CategoryDetailsViewController.getInstance(type: .animal),   
+            CategoryDetailsViewController.getInstance(type: .career),
+            CategoryDetailsViewController.getInstance(type: .celebrity),
+            CategoryDetailsViewController.getInstance(type: .dev),
+            CategoryDetailsViewController.getInstance(type: .explicit),
+            CategoryDetailsViewController.getInstance(type: .fashion),
         ]
         setViewControllers([individualPageViewControllerList[0]], direction:.forward, animated: true, completion: nil)
     }
@@ -53,5 +55,10 @@ extension CategoryViewController : UIPageViewControllerDataSource {
     }
 
 extension CategoryViewController : UIPageViewControllerDelegate{
-    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        individualPageViewControllerList.count
+    }
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        0
+    }
 }
